@@ -1,1 +1,57 @@
-fix
+Kalau mau cara **paling gampang & cepat** biar device lain bisa buka **localhost XAMPP**, ikuti langkah ini aja:
+
+---
+
+### 🚀 Cara Cepat Akses Localhost XAMPP dari Device Lain
+
+1. **Pastikan 1 jaringan WiFi/LAN**
+
+   * Laptop (XAMPP) + HP/laptop lain → harus terhubung ke WiFi yang sama.
+
+2. **Cek IP laptop**
+
+   * Buka CMD → ketik:
+
+     ```
+     ipconfig
+     ```
+   * Catat `IPv4 Address`, misalnya `192.168.1.10`.
+
+3. **Ubah izin akses XAMPP**
+
+   * Buka file ini:
+
+     ```
+     C:\xampp\apache\conf\extra\httpd-xampp.conf
+     ```
+   * Cari bagian:
+
+     ```apache
+     <Directory "C:/xampp/htdocs/xampp">
+         AllowOverride All
+         Require local
+     </Directory>
+     ```
+   * Ubah `Require local` jadi:
+
+     ```apache
+     Require all granted
+     ```
+
+4. **Restart Apache** lewat XAMPP Control Panel.
+
+5. **Akses dari HP/laptop lain**
+
+   * Di browser HP/laptop lain, ketik:
+
+     ```
+     http://192.168.1.10/nama_folder_project
+     ```
+
+---
+
+⚡ Jadi **cara gampangnya**:
+
+* Cek IP laptop → ubah `Require local` ke `Require all granted` → restart Apache → akses via IP di browser device lain.
+
+Mau saya bikinkan **script otomatis (BAT file)** biar kamu tinggal klik sekali buat jalankan XAMPP + langsung bisa diakses device lain?

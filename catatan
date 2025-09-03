@@ -1,0 +1,1 @@
+The error is due to missing columns in the 'login_logs' database table. The table schema in the code expects columns like 'device_model' which are missing in the actual table. I can help you fix this by updating the database schema to add the missing columns. Should I proceed with preparing the SQL commands to update the table schema?
